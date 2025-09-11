@@ -1,0 +1,56 @@
+﻿@model SistemaWeb.Models.Productos
+
+@{
+    ViewBag.Title = "Editar Producto";
+}
+
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-warning text-dark">
+        <h4 class="mb-0"><i class="fa-solid fa-pen-to-square"></i> Editar Producto</h4>
+    </div>
+    <div class="card-body">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+            @Html.HiddenFor(m => m.ProductoId)
+
+            <div class="mb-3">
+                @Html.LabelFor(m => m.Nombre, "Nombre del producto", new { @class = "form-label fw-bold" })
+                @Html.EditorFor(m => m.Nombre, new { htmlAttributes = new { @class = "form-control", placeholder = "Ingrese el nombre..." } })
+                @Html.ValidationMessageFor(m => m.Nombre, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(m => m.Precio, "Precio", new { @class = "form-label fw-bold" })
+                @Html.EditorFor(m => m.Precio, new { htmlAttributes = new { @class = "form-control", placeholder = "0.00" } })
+                @Html.ValidationMessageFor(m => m.Precio, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(m => m.Stock, "Stock disponible", new { @class = "form-label fw-bold" })
+                @Html.EditorFor(m => m.Stock, new { htmlAttributes = new { @class = "form-control", placeholder = "Cantidad en stock" } })
+                @Html.ValidationMessageFor(m => m.Stock, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(m => m.CategoriaId, "Categoría", new { @class = "form-label fw-bold" })
+                @Html.DropDownList("CategoriaId", null, "-- Seleccione una categoría --", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CategoriaId, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="d-flex justify-content-between">
+                @Html.ActionLink(" Cancelar", "Index", null, new { @class = "btn btn-secondary fa-solid fa-arrow-left" })
+                <button type="submit" class="btn btn-warning text-dark fa-solid fa-floppy-disk">
+                    Guardar cambios
+                </button>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

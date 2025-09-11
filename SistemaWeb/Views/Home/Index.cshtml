@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Inicio";
+}
+
+<style>
+    /* Estilos rápidos solo para esta vista */
+    .hero {
+        background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+        color: #fff;
+        padding: 36px 28px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,.15);
+        margin-bottom: 28px;
+    }
+
+        .hero h1 {
+            font-weight: 700;
+            margin-bottom: .25rem;
+        }
+
+        .hero p.lead {
+            margin-bottom: 1rem;
+            opacity: .95;
+        }
+
+    .btn-hero {
+        margin-right: .5rem;
+        margin-bottom: .5rem;
+    }
+
+    .panel-hover {
+        transition: all .2s ease-in-out;
+        border-radius: 10px;
+        box-shadow: 0 4px 14px rgba(0,0,0,.06);
+    }
+
+        .panel-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 26px rgba(0,0,0,.12);
+        }
+
+    .icon-xl {
+        font-size: 28px;
+        margin-right: .35rem;
+        vertical-align: -3px;
+    }
+
+    .tiny-note {
+        font-size: 12px;
+        color: #6c757d;
+    }
+</style>
+
+<div class="hero">
+    <h1><i class="fa-solid fa-shop"></i> Sistema de Ventas</h1>
+    <p class="lead">Administra <strong>Productos</strong>, <strong>Categorías</strong> y <strong>Clientes</strong> de forma simple y rápida.</p>
+
+    @Html.ActionLink(" Ver productos", "Index", "Productos", null, new { @class = "btn btn-warning btn-hero fa-solid fa-box" })
+    @Html.ActionLink(" Ver categorías", "Index", "Categorias", null, new { @class = "btn btn-light btn-hero fa-solid fa-tags" })
+    @Html.ActionLink(" Ver clientes", "Index", "Clientes", null, new { @class = "btn btn-success btn-hero fa-solid fa-user-group" })
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default panel-hover">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa-solid fa-box icon-xl"></i> Productos</h3>
+            </div>
+            <div class="panel-body">
+                Crea, edita y elimina productos. Controla precio y stock, y relaciónalos con su categoría.
+            </div>
+            <div class="panel-footer">
+                @Html.ActionLink(" Gestionar productos", "Index", "Productos", null, new { @class = "btn btn-primary btn-sm fa-solid fa-arrow-right" })
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default panel-hover">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa-solid fa-tags icon-xl"></i> Categorías</h3>
+            </div>
+            <div class="panel-body">
+                Organiza tu catálogo agrupando productos por categorías para una búsqueda más rápida.
+            </div>
+            <div class="panel-footer">
+                @Html.ActionLink(" Gestionar categorías", "Index", "Categorias", null, new { @class = "btn btn-primary btn-sm fa-solid fa-arrow-right" })
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default panel-hover">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa-solid fa-user-group icon-xl"></i> Clientes</h3>
+            </div>
+            <div class="panel-body">
+                Registra y administra la información de tus clientes para mejorar la atención y seguimiento.
+            </div>
+            <div class="panel-footer">
+                @Html.ActionLink(" Gestionar clientes", "Index", "Clientes", null, new { @class = "btn btn-primary btn-sm fa-solid fa-arrow-right" })
+            </div>
+        </div>
+    </div>
+</div>
+
+<p class="tiny-note">
+    <i class="fa-regular fa-lightbulb"></i> Tip: usa el menú superior para acceder rápidamente a cada módulo.
+</p>

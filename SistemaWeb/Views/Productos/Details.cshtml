@@ -1,0 +1,36 @@
+﻿@model SistemaWeb.Models.Productos
+
+@{
+    ViewBag.Title = "Detalles del Producto";
+}
+
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-info text-white">
+        <h4 class="mb-0">
+            <i class="fa-solid fa-circle-info"></i> Detalles del Producto
+        </h4>
+    </div>
+
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3 fw-bold">Nombre del producto</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(m => m.Nombre)</dd>
+
+            <dt class="col-sm-3 fw-bold">Precio</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(m => m.Precio)</dd>
+
+            <dt class="col-sm-3 fw-bold">Stock</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(m => m.Stock)</dd>
+
+            <dt class="col-sm-3 fw-bold">Categoría</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(m => m.Categorias.Nombre)</dd>
+        </dl>
+    </div>
+
+    <div class="card-footer d-flex justify-content-between">
+        @Html.ActionLink(" Regresar", "Index", null,
+            new { @class = "btn btn-secondary fa-solid fa-arrow-left" })
+        @Html.ActionLink(" Editar", "Edit", new { id = Model.ProductoId },
+            new { @class = "btn btn-warning fa-solid fa-pen-to-square" })
+    </div>
+</div>

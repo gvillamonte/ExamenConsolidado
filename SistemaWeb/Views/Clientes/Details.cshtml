@@ -1,0 +1,34 @@
+﻿@model SistemaWeb.Models.Clientes
+
+@{
+    ViewBag.Title = "Detalles del Cliente";
+}
+
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-info text-white">
+        <h4 class="mb-0"><i class="fa-solid fa-circle-info"></i> Detalles del Cliente</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3 fw-bold">
+                Nombre del cliente
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+
+            <dt class="col-sm-3 fw-bold">
+                Correo electrónico
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+        </dl>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        @Html.ActionLink(" Regresar", "Index", null,
+            new { @class = "btn btn-secondary fa-solid fa-arrow-left" })
+        @Html.ActionLink(" Editar", "Edit", new { id = Model.ClienteId },
+            new { @class = "btn btn-warning fa-solid fa-pen-to-square" })
+    </div>
+</div>

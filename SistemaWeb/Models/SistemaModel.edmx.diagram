@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="11659351a0bb4fa2b5aebd6acbde1bba" Name="Diagram1">
+        <EntityTypeShape EntityType="SistemaDBModel.Categorias" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaDBModel.Clientes" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaDBModel.DetallesPedido" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaDBModel.Pedidos" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaDBModel.Productos" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="SistemaDBModel.FK__Productos__Categ__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaDBModel.FK__Pedidos__Cliente__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaDBModel.FK__DetallesP__Pedid__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaDBModel.FK__DetallesP__Produ__30F848ED" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

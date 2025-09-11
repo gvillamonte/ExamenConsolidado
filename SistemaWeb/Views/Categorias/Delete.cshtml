@@ -1,0 +1,36 @@
+﻿@model SistemaWeb.Models.Categorias
+
+@{
+    ViewBag.Title = "Eliminar Categoría";
+}
+
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-danger text-white">
+        <h4 class="mb-0">
+            <i class="fa-solid fa-triangle-exclamation"></i> Eliminar Categoría
+        </h4>
+    </div>
+    <div class="card-body">
+        <h5 class="text-danger">¿Estás seguro de que deseas eliminar esta categoría?</h5>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3 fw-bold">
+                Nombre de la categoría
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+        </dl>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-danger fa-solid fa-trash">
+                Eliminar
+            </button>
+        }
+        @Html.ActionLink(" Cancelar", "Index", null,
+            new { @class = "btn btn-secondary fa-solid fa-arrow-left" })
+    </div>
+</div>

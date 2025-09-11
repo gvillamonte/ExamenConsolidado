@@ -1,0 +1,30 @@
+﻿@model SistemaWeb.Models.Categorias
+
+@{
+    ViewBag.Title = "Detalles de Categoría";
+}
+
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-info text-white">
+        <h4 class="mb-0">
+            <i class="fa-solid fa-circle-info"></i> Detalles de la Categoría
+        </h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3 fw-bold">
+                Nombre de la categoría
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+        </dl>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        @Html.ActionLink(" Regresar", "Index", null,
+            new { @class = "btn btn-secondary fa-solid fa-arrow-left" })
+        @Html.ActionLink(" Editar", "Edit", new { id = Model.CategoriaId },
+            new { @class = "btn btn-warning fa-solid fa-pen-to-square" })
+    </div>
+</div>
+

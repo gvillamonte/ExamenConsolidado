@@ -1,0 +1,43 @@
+﻿@model SistemaWeb.Models.Clientes
+
+@{
+    ViewBag.Title = "Eliminar Cliente";
+}
+
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-danger text-white">
+        <h4 class="mb-0">
+            <i class="fa-solid fa-triangle-exclamation"></i> Eliminar Cliente
+        </h4>
+    </div>
+    <div class="card-body">
+        <h5 class="text-danger">¿Estás seguro de que deseas eliminar este cliente?</h5>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3 fw-bold">
+                Nombre del cliente
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+
+            <dt class="col-sm-3 fw-bold">
+                Correo electrónico
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+        </dl>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-danger fa-solid fa-trash">
+                Eliminar
+            </button>
+        }
+        @Html.ActionLink(" Cancelar", "Index", null,
+            new { @class = "btn btn-secondary fa-solid fa-arrow-left" })
+    </div>
+</div>

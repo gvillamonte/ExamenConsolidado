@@ -1,0 +1,33 @@
+﻿@model IEnumerable<SistemaWeb.Models.Categorias>
+
+@{
+    ViewBag.Title = "Categorías";
+}
+
+<h2>Categorías</h2>
+
+<p>
+    @Html.ActionLink(" Agregar", "Create", null, new { @class = "btn btn-primary fa-solid fa-plus" })
+</p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Nombre de la categoría</th>
+            <th style="width:200px">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td class="text-end">
+                    @Html.ActionLink(" ", "Edit", new { id = item.CategoriaId }, new { @class = "btn btn-sm btn-warning me-1 fa-solid fa-pen-to-square", title = "Editar" })
+                    @Html.ActionLink(" ", "Details", new { id = item.CategoriaId }, new { @class = "btn btn-sm btn-info me-1 fa-solid fa-circle-info", title = "Detalles" })
+                    @Html.ActionLink(" ", "Delete", new { id = item.CategoriaId }, new { @class = "btn btn-sm btn-danger fa-solid fa-trash", title = "Eliminar" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
